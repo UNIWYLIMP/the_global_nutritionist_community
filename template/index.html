@@ -1,0 +1,863 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Nutritionist Community</title>
+
+<link rel="shortcut icon" href="{% static 'images/nutritionist-community-favicon.png' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'images/nutritionist-community-favicon.png' %}" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Prata|Rubik:300,400,500,700&amp;display=swap" rel="stylesheet"> 
+
+<!-- Stylesheets -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css/jquery-ui.css' %}" rel="stylesheet">
+<link href="{% static 'css/swiper.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
+<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+<link href="{% static 'css/custom-animate.css' %}" rel="stylesheet">
+<link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/owl.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="{% static 'js/respond.js' %}"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="loader-wrap">
+        <div class="preloader"></div>
+        <div class="layer layer-one"><span class="overlay"></span></div>
+        <div class="layer layer-two"><span class="overlay"></span></div>        
+        <div class="layer layer-three"><span class="overlay"></span></div>        
+    </div>
+    
+    <!-- Main Header-->
+    <header class="main-header">
+        <!-- Top bar -->
+        <div class="top-bar theme-bg">
+            <div class="auto-container">
+                <div class="wrapper-box">
+                    <div class="left-content"> 
+                        <div class="text">We only have what we give... <a href="/donate" class="donate-box-btn">Donate Now.</a></div>
+                    </div>
+                    <div class="right-content">
+                        <ul class="contact-info">
+                            <li><span class="flaticon-mail"></span><a href="mailto:globalnutritioncommunity@gmail.com">globalnutritioncommunity@gmail.com</a></li>
+                            <li><span class="flaticon-phone"></span><a href="tel:+2349064420665">+234 906 442 0665</a></li>
+                        </ul>
+                        <ul class="social-icon-one">
+                            <li><a href="https://www.linkedin.com/company/the-global-nutrition-community/"><span class="fa fa-linkedin"></span></a></li>
+                            <li><a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTM1MzI2Nzc5NzE0MjI3?story_media_id=3318712493667095326_63520600948&igsh=NTc4MTIwNjQ2YQ=="><span class="fa fa-instagram"></span></a></li>
+                            <li><a href="https://x.com/T_G_N_C"><span class="bi bi-twitter-x"></span></a></li>
+                        </ul>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <!-- Header Upper -->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="wrapper-box">
+                    <div class="logo-column">
+                        <div class="logo-box">
+                            <div class="logo"><a href="#"><img src="{% static 'images/nutritionist-community.png' %}" alt="T" title="" style="width: 150px;"></a></div>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <div class="option-wrapper">
+                            <div class="nav-outer">
+                                
+                                <!-- Main Menu -->
+                                <nav class="main-menu navbar-expand-xl navbar-dark">
+                                    
+                                    <div class="collapse navbar-collapse">
+                                        <ul class="navigation">
+                                            <li class=""><a href="/">Home</a>
+                                            </li>
+                                            <li><a href="/about">About</a>
+                                            </li>
+                                            {% if user.account_type == "staff" %}
+                                            <li><a href="/admin-resources">Library</a>
+                                            </li>
+                                             <li><a href="/admin_events">Events</a>
+                                            </li>
+                                            {% else %}
+                                            <li><a href="/resources">Library</a>
+                                            </li>
+                                            <li><a href="/events">Events</a>
+                                            </li>
+                                            {% endif %}
+                                            <li><a href="#">Blog</a>
+                                            </li>
+                                            <li><a href="/community">Community</a>
+                                            </li>
+                                            <li><a href="/#conact-us-now">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </nav><!-- Main Menu End-->
+                            </div>
+                            <!--Search Box-->
+                            <div class="search-box-outer">
+                                <div class="dropdown">
+                                    <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                                    <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
+                                        <li class="panel-outer">
+                                            <div class="form-container">
+                                                <form method="post" action="http://steelthemes.com/demo/html/Goodsoul_html/blog.html">
+                                                    <div class="form-group">
+                                                        <input type="search" name="field-name" value="" placeholder="Search...." required="">
+                                                        <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="navbar-btn-wrap">
+                                <button class="anim-menu-btn">
+                                  <i class="flaticon-menu"></i>
+                                </button>
+                            </div>
+                            {% if user.is_authenticated %}
+                            <div class="link-btn">
+                                <a href="/logout" class="theme-btn btn-style-one"><span>Logout</span></a>
+                            </div>
+                            {% else %}
+                            <div class="link-btn">
+                                <a href="/register" class="theme-btn btn-style-one"><span>Volunteer</span></a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+
+        <!--End Header Upper-->
+        <div class="sticky-header">
+            <div class="auto-container">
+                <div class="wrapper-box">
+                    <div class="logo-column">
+                        <div class="logo-box">
+                            <div class="logo"><a href="#"><img src="{% static 'images/nutritionist-community.png' %}" alt="" title="" style="width: 150px;"></a></div>
+                        </div>
+                    </div>
+                    <div class="menu-column">
+                        <div class="nav-outer">
+                            
+                            <div class="nav-inner">
+
+                                <!-- Main Menu -->
+                                <nav class="main-menu navbar-expand-xl navbar-dark">
+                                    
+                                    <div class="collapse navbar-collapse">
+                                        <ul class="navigation">
+                                        </ul>
+                                    </div>
+                                </nav><!-- Main Menu End-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu style-one">
+            <div class="menu-box">
+                <div class="logo"><a href="index-2.html"><img src="{% static 'images/nutritionist-community.png' %}" alt="" style="width: 100px;"></a></div>
+                <!-- Main Menu -->
+                <nav class="main-menu navbar-expand-xl navbar-dark">
+                    <div class="navbar-header">
+                        <!-- Toggle Button -->      
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="flaticon-menu"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navigation">
+                            
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Main Menu End-->
+                <!--Search Box-->
+                <div class="search-box-outer">
+                    <div class="dropdown">
+                        <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                        <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu4">
+                            <li class="panel-outer">
+                                <div class="form-container">
+                                    <form method="post" action="http://steelthemes.com/demo/html/Goodsoul_html/blog.html">
+                                        <div class="form-group">
+                                            <input type="search" name="field-name" value="" placeholder="Search...." required="">
+                                            <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>     
+                
+        </div>
+        <!-- End Mobile Menu -->
+
+        <div class="nav-overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div>
+    </header>
+    <!-- End Main Header -->
+
+    <!-- Hidden Sidebar -->
+    <section class="hidden-sidebar close-sidebar">
+        <div class="wrapper-box">
+            <div class="hidden-sidebar-close"><span class="flaticon-cross"></span></div>
+            <div class="logo"><a href="#"><img src="{% static 'images/nutritionist-community.png' %}" alt="" title="" style="width: 200px;"></a></div>
+            <div class="content">
+                <div class="about-widget-four sidebar-widget">
+                    <h3>To improve learning environment in primary schools</h3>
+                    <div class="text">We denounce with righteous indignation and dislike men who we are to beguiled demoralized by the charms of pleasures that moment, so we blinded desires, that they indignations.</div>
+                </div>
+                <!-- News Widget -->
+                <div class="news-widget-two sidebar-widget">
+                    <div class="widget-title">News & Updates</div>
+                    <div class="post-wrapper">
+                        <div class="image"><a href="blog-details.html"><img src="{% static 'images/resource/post-thumb-1.jpg" alt=""></a></div>
+                        <div class="category">LIFE SAVING</div>
+                        <h4><a href="blog-details.html">Goodsoul partners with lafarge on national literacy competition</a></h4>
+                    </div>
+                    <div class="post-wrapper">
+                        <div class="image"><a href="blog-details.html"><img src="{% static 'images/resource/post-thumb-2.jpg" alt=""></a></div>
+                        <div class="category">Education</div>
+                        <h4><a href="blog-details.html">Goodsoul improves education infrastructure</a></h4>
+                    </div>
+                </div>
+                <!-- Newsletter Widget -->
+                <div class="newsletter-widget-two">
+                    <div class="widget-title">Newsletter Subscription</div>
+                    <form action="#">
+                        <input type="email" placeholder="Enter Email Address">
+                        <button class="theme-btn btn-style-one w-100"><i class="flaticon-next"></i><span>Subscribe Us</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bnner Section -->
+    <section class="banner-section">
+        <div class="swiper-container banner-slider">
+            <div class="swiper-wrapper">
+                <!-- Slide Item -->
+                <div class="swiper-slide" style="background-image: url(/static/images/main-slider/14.jpg);">
+                    <div class="content-outer">
+                        <div class="content-box justify-content-center">
+                            <div class="inner text-center">
+                                <h4><span class="border-shape-left"></span>Nutrition is the foundation of health<span class="border-shape-right"></span></h4>
+                                <h1>Inspiring Health, Feeding And Empowering The Future</h1>
+                                <div class="text">Your donation ensures that vulnerable communities receive the essential nutrition they need to thrive.<br>basic education systems to the community.</div>
+                                <div class="link-box"><a href="/donate" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide Item -->
+                <div class="swiper-slide" style="background-image: url(/static/images/main-slider/18.jpg);">
+                    <div class="content-outer">
+                        <div class="content-box justify-content-center">
+                            <div class="inner text-center">
+                                <div class="link-box-two"><a href="#" class="theme-btn default-btn">help the needy</a></div>
+                                <h3>Create Lasting Impact On Health</h3>
+                                <h1>Make A Difference & Inspire Generation</h1>
+                                <div class="link-box"><a href="/donate" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide Item -->
+                <div class="swiper-slide" style="background-image: url(/static/images/main-slider/16.jpg);">
+                    <div class="content-outer">
+                        <div class="content-box justify-content-center">
+                            <div class="inner text-center">
+                                <h1>Curing the World, One Donation At A Time/</h1>
+                                <div class="text">Each donation helps us deliver nutritions to a kid in Africa.</div>
+                                <div class="link-box"><a href="/donate" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-slider-pagination style-two"></div>
+            <div class="banner-slider-nav style-one">
+                <div class="banner-slider-control banner-slider-button-prev"><span class="fa fa-angle-left"></span></div>
+                <div class="banner-slider-control banner-slider-button-next"><span class="fa fa-angle-right"></span> </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Bnner Section -->
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-content-block">
+                        <h1>Be part of the change <br>you want to see in the world.</h1>
+                        <h4>“Kindness is not measured by the amount given, but by the spirit in <br>which it is bestowed.”</h4>
+                        <div class="text wow fadeInUp" data-wow-delay="200ms">The Global Nutrition Community is a vibrant network of nutrition professionals, students, and enthusiasts
+                        dedicated to promoting optimal health and well-being through evidence-based nutrition practices. Founded in November 2023 by Rhoda Olorunseyi.</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="link-btn wow fadeInLeft" data-wow-delay="500ms"><a href="/about" class="theme-btn btn-style-two"><i class="flaticon-next"></i><span>Our Mission</span></a></div>
+                                <div class="text">To build a global network of responsible and respected nutrition leaders, providing access to resources, tools, and support.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="link-btn wow fadeInRight" data-wow-delay="900ms"><a href="/about" class="theme-btn btn-style-three"><i class="flaticon-next"></i><span>Our Vision</span></a></div>
+                                <div class="text">A world where nutrition professionals are valued and recognized for their expertise, and individuals prioritize informed dietary choices for optimal health and well-being.</div>
+                            </div>
+                        </div>
+                        <div class="link-btn-two">
+                            <a href="/about" class="theme-btn btn-style-one"><span>More About Us</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image-block">
+                        <div class="logo-box"><div class="image wow zoomIn" data-wow-delay="500ms"><img src="{% static 'images/resource/logo-icon.png' %}" alt=""></div></div>
+                        <div class="image-one wow fadeInUp" data-wow-delay="200ms"><img src="{% static 'images/h51.jpg' %}" alt="" style="width: 270px; height: 572px; object-fit: cover;"></div>
+                        <div class="image-two"><img src="{% static 'images/h43.jpg' %}" style="width: 260px; height: 370px; object-fit: cover;" alt=""><a href="https://youtu.be/R8qTgjflAUQ?si=tt5F3f-VNcdqCwE8" class="overlay-link lightbox-image video-fancybox"><span class="flaticon-multimedia"></span></a></div>
+                        <div class="image-three wow fadeInRight" data-wow-delay="200ms"><img src="{% static 'images/h50.jpg' %}" alt="" style="width: 270px; height: 300px; object-fit: cover;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes Section -->
+    <section class="causes-section">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <h1>Our exciting events</h1>
+                <div class="text">Making the world a healthy place a step at a time, join us today!</div>
+            </div>
+            <div class="cause-carousel-wrapper">
+                <div class="cause-carousel owl-theme owl-carousel owl-dots-none owl-nav-style-three">
+                    {% for event in events %}
+                    <!-- Cause Block One -->
+                    <div class="cause-block-one">
+                        <div class="inner-box">
+                            <div class="image"><a href="/single_event/{{event.id}}"><img src="{{event.image}}" alt=""></a></div>
+                            <div class="lower-content">
+                                <h4><a href="/single_event/{{event.id}}">{{event.name|truncatechars:35}}</a></h4>
+                                <div class="category"><a href="/blog"><span class="flaticon-book"></span>Health & Nutrition</a></div>
+                                <div class="info-box">
+                                    <a href="/single_event/{{event.id}}"><span>Goal:</span> {{event.donation_goal}}(₦)</a>
+                                </div>
+                                <!--Progress Levels-->
+                                <div class="progress-levels">
+                                            
+                                    <!--Skill Box-->
+                                    <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                        <div class="inner">
+                                            <div class="bar">
+                                                <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text">{{event.location}}</div>
+                                <div class="bottom-content">
+                                    <div class="link-btn"><a href="/donate" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                    <div class="share-icon post-share-icon">
+                                        <div class="share-btn"><i class="flaticon-share"></i></div>
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="auto-container">
+            <div class="row m-0 justify-content-md-between align-items-end">
+                <div class="sec-title light">
+                    <h1>Team behind TGNC</h1>
+                    <div class="text">Our work would not be possible without the work of our dedicated team.</div>
+                </div>
+                <!--Link Btn-->
+                <div class="link-btn mb-50">
+                    <a href="/about#team" class="theme-btn btn-style-one"><span>Meet All Members</span></a>
+                </div>
+            </div>
+            <div class="wrapper-box">
+                <div class="row">
+                    <!-- Team Blokc One -->
+                    <div class="col-lg-4 team-block-one">
+                        <div class="inner-box wow fadeInDown" data-wow-delay="200ms">
+                            <div class="image"><a href="#"><img src="{% static 'images/team-lead.jpg' %}" alt=""></a></div>
+                            <div class="lower-content">
+                                <h4> <a href="#">Rhoda Olurunseyi</a></h4>
+                                <div class="designation">TGNC Founder</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Blokc One -->
+                    <div class="col-lg-4 team-block-one">
+                        <div class="inner-box wow fadeInUp" data-wow-delay="400ms">
+                            <div class="image"><a href="#"><img src="{% static 'images/team-lead-2.jpg' %}" alt=""></a></div>
+                            <div class="lower-content">
+                                <h4> <a href="#">Michael O. Olukayode</a></h4>
+                                <div class="designation">Technical Lead</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Blokc One -->
+                    <div class="col-lg-4 team-block-one">
+                        <div class="inner-box wow fadeInDown" data-wow-delay="200ms">
+                            <div class="image"><a href="#"><img src="{% static 'images/team-lead-3.png' %}" alt=""></a></div>
+                            <div class="lower-content">
+                                <h4> <a href="#">Fiyinfoluwa Odukoya</a></h4>
+                                <div class="designation">Ground Person</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funfact Section -->
+    <section class="funfacts-section">
+        <div class="auto-container mt-3">
+            <div class="sec-title text-center">
+                <h1>Our Campaigns</h1>
+                <div class="text">We are changing the world. Health & Nutrition matters!</div>
+            </div>
+            <div class="outer-box">
+                <div class="funfact-wrapper row">
+                    <!--Column-->
+                    <div class="col-lg-4 counter-block wow fadeInUp" data-wow-delay="300ms">
+                        <div class="inner-box">
+                            <div class="icon-box"><img src="{% static 'images/icons/icon-3.png' %}" alt=""></div>
+                            <h4>Donated Fund</h4>
+                            <div class="count-box">
+                                <span class="prefix">₦</span><span class="count-text" data-speed="3000" data-stop="1.2">0</span><span class="affix">M</span>
+                            </div>
+                            <div class="text">Over 500 directly beneficiaries of our <br>foundation programme.</div>
+                        </div>
+                    </div>
+                    <!--Column-->
+                    <div class="col-lg-4 counter-block wow fadeInUp" data-wow-delay="600ms">
+                        <div class="inner-box">
+                            <div class="icon-box"><img src="{% static 'images/icons/icon-4.png' %}" alt=""></div>
+                            <h4>Our Members</h4>
+                            <div class="count-box">
+                                <span class="prefix"></span><span class="count-text" data-speed="3000" data-stop="120">0</span><span class="affix">+</span>
+                            </div>
+                            <div class="text">Become a  member today, join  the health lovers and save the world.</div>
+                        </div>
+                    </div>
+                    <!--Column-->
+                    <div class="col-lg-4 counter-block wow fadeInUp" data-wow-delay="300ms">
+                        <div class="inner-box">
+                            <div class="icon-box"><img src="{% static 'images/icons/icon-5.png' %}" alt=""></div>
+                            <h4>Beneficiaries</h4>
+                            <div class="count-box">
+                                <span class="prefix"></span><span class="count-text" data-speed="3000" data-stop="500">0</span><span class="affix">+</span>
+                            </div>
+                            <div class="text">Our work would not be possible without <br>dedicatd team of expert.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>                
+            <div class="bottom-content text-center">
+                <div class="text">Health and nutrition are one of the crucial sectors that impact the global stability of nations. WHO health statistics has shown that nations who invest in the well-being of their citizens would progress significantly over the years. Join the race today, become a member!</div>
+                {% if not user.is_authenticated %}
+                <div class="link-btn"><a href="/register" class="theme-btn btn-style-one donate-box-btn"><span>Register</span></a></div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!--Events Section-->
+    <section class="events-section">
+                
+        <!--Event Tabs-->
+        <div class="event-tabs">
+            <div class="auto-container">
+                <div class="row m-0 justify-content-md-between align-items-end">
+                    <div class="sec-title">
+                        <h1>Latest Updates and News</h1>
+                        <div class="text">Don't miss out, get the latest news in the health sector!</div>
+                    </div>
+                </div> 
+                <div class="event-tab-wrapper">
+                    <!--Tabs Content-->  
+                    <div class="event-tabs-content">
+                        <!--Event Tab / Active Tab-->
+                        <div class="event-tab active-tab" id="event-tab-1">
+                            <div class="event-carousel owl-theme owl-carousel owl-dot-style-one owl-nav-none">
+                                <!-- Event Blokc One -->
+                                <div class="event-block-one">
+                                    <div class="inner-box">
+                                        <div class="image"><img src="{% static 'images/resource/event-1.jpg' %}" alt=""></div>
+                                        <div class="lower-content">
+                                            <div class="date">
+                                                <h1>25</h1>
+                                                <div class="text"><span>August</span> <br>09.00am  - 03.00pm</div>
+                                            </div>
+                                            <h4><a href="event-details.html">A wooden fishing boat rests on <br>deal in kent</a></h4>
+                                            <div class="location"><span class="flaticon-point"></span>24, Red rose Steet, NY</div>
+                                        </div>
+                                        <div class="link-btn"><a href="#"><span class="flaticon-next"></span>Join With Us</a></div>
+                                    </div>
+                                </div>
+                                <!-- Event Blokc One -->
+                                <div class="event-block-one">
+                                    <div class="inner-box">
+                                        <div class="image"><img src="{% static 'images/resource/event-2.jpg' %}" alt=""></div>
+                                        <div class="lower-content">
+                                            <div class="date">
+                                                <h1>16</h1>
+                                                <div class="text"><span>October</span> <br>10.00am  - 05.00pm</div>
+                                            </div>
+                                            <h4><a href="event-details.html">Cancer support – world’s biggest <br> coffee morning</a></h4>
+                                            <div class="location"><span class="flaticon-point"></span>213, Derrick Street, Bos</div>                                        
+                                        </div>
+                                        <div class="link-btn"><a href="event-details.html"><span class="flaticon-next"></span>Join With Us</a></div>
+                                    </div>
+                                </div>
+                                <!-- Event Blokc One -->
+                                <div class="event-block-one">
+                                    <div class="inner-box">
+                                        <div class="image"><img src="{% static 'images/resource/event-3.jpg' %}" alt=""></div>
+                                        <div class="lower-content">
+                                            <div class="date">
+                                                <h1>27</h1>
+                                                <div class="text"><span>December</span> <br>09.00am  - 03.00pm</div>
+                                            </div>
+                                            <h4><a href="event-details.html">Birmingham children’s hospital <br>night-time obstacle race</a></h4>
+                                            <div class="location"><span class="flaticon-point"></span>5404, Sebenth Street, la</div>
+                                        </div>
+                                        <div class="link-btn"><a href="event-details.html"><span class="flaticon-next"></span>Join With Us</a></div>
+                                    </div>
+                                </div>
+                                <!-- Event Blokc One -->
+                                <div class="event-block-one">
+                                    <div class="inner-box">
+                                        <div class="image"><img src="{% static 'images/resource/event-1.jpg' %}" alt=""></div>
+                                        <div class="lower-content">
+                                            <div class="date">
+                                                <h1>25</h1>
+                                                <div class="text"><span>August</span> <br>09.00am  - 03.00pm</div>
+                                            </div>
+                                            <h4><a href="event-details.html">A wooden fishing boat rests on <br>deal in kent</a></h4>
+                                            <div class="location"><span class="flaticon-point"></span>24, Red rose Steet, NY</div>
+                                        </div>
+                                        <div class="link-btn"><a href="event-details.html"><span class="flaticon-next"></span>Join With Us</a></div>
+                                    </div>
+                                </div>
+                                <!-- Event Blokc One -->
+                                <div class="event-block-one">
+                                    <div class="inner-box">
+                                        <div class="image"><img src="{% static 'images/resource/event-2.jpg' %}" alt=""></div>
+                                        <div class="lower-content">
+                                            <div class="date">
+                                                <h1>16</h1>
+                                                <div class="text"><span>October</span> <br>10.00am  - 12.00pm</div>
+                                            </div>
+                                            <h4><a href="event-details.html">Cancer support – world’s biggest <br> coffee morning</a></h4>
+                                            <div class="location"><span class="flaticon-point"></span>213, Derrick Street, Bos</div>                                        
+                                        </div>
+                                        <div class="link-btn"><a href="event-details.html"><span class="flaticon-next"></span>Join With Us</a></div>
+                                    </div>
+                                </div>
+                                <!-- Event Blokc One -->
+                                <div class="event-block-one">
+                                    <div class="inner-box">
+                                        <div class="image"><img src="{% static 'images/resource/event-3.jpg' %}" alt=""></div>
+                                        <div class="lower-content">
+                                            <div class="date">
+                                                <h1>27</h1>
+                                                <div class="text"><span>December</span> <br>10.00am  - 05.00pm</div>
+                                            </div>
+                                            <h4><a href="event-details.html">Birmingham children’s hospital <br>night-time obstacle race</a></h4>
+                                            <div class="location"><span class="flaticon-point"></span>5404, Sebenth Street, la</div>
+                                        </div>
+                                        <div class="link-btn"><a href="event-details.html"><span class="flaticon-next"></span>Join With Us</a></div>
+                                    </div>
+                                </div>
+                                <!-- Event Blokc One -->
+                                <div class="event-block-one">
+                                    <div class="inner-box">
+                                        <div class="image"><img src="{% static 'images/resource/event-1.jpg' %}" alt=""></div>
+                                        <div class="lower-content">
+                                            <div class="date">
+                                                <h1>25</h1>
+                                                <div class="text"><span>August</span> <br>09.00am  - 03.00pm</div>
+                                            </div>
+                                            <h4><a href="event-details.html">A wooden fishing boat rests on <br>deal in kent</a></h4>
+                                            <div class="location"><span class="flaticon-point"></span>24, Red rose Steet, NY</div>
+                                        </div>
+                                        <div class="link-btn"><a href="event-details.html"><span class="flaticon-next"></span>Join With Us</a></div>
+                                    </div>
+                                </div>
+                                <!-- Event Blokc One -->
+                                <div class="event-block-one">
+                                    <div class="inner-box">
+                                        <div class="image"><img src="{% static 'images/resource/event-2.jpg' %}" alt=""></div>
+                                        <div class="lower-content">
+                                            <div class="date">
+                                                <h1>16</h1>
+                                                <div class="text"><span>October</span> <br>10.00am  - 12.00pm</div>
+                                            </div>
+                                            <h4><a href="event-details.html">Cancer support – world’s biggest <br> coffee morning</a></h4>
+                                            <div class="location"><span class="flaticon-point"></span>213, Derrick Street, Bos</div>                                        
+                                        </div>
+                                        <div class="link-btn"><a href="event-details.html"><span class="flaticon-next"></span>Join With Us</a></div>
+                                    </div>
+                                </div>
+                                <!-- Event Blokc One -->
+                                <div class="event-block-one">
+                                    <div class="inner-box">
+                                        <div class="image"><img src="{% static 'images/resource/event-3.jpg' %}" alt=""></div>
+                                        <div class="lower-content">
+                                            <div class="date">
+                                                <h1>27</h1>
+                                                <div class="text"><span>December</span> <br>10.00am  - 05.00pm</div>
+                                            </div>
+                                            <h4><a href="event-details.html">Birmingham children’s hospital <br>night-time obstacle race</a></h4>
+                                            <div class="location"><span class="flaticon-point"></span>5404, Sebenth Street, la</div>
+                                        </div>
+                                        <div class="link-btn"><a href="event-details.html"><span class="flaticon-next"></span>Join With Us</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        
+        </div>
+    </section>
+
+    <!-- Testimonial Section Four -->
+    <section class="testimonial-section-four">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <h1>A Testament Of Our Work</h1>
+                <div class="text">Please read below to see what a few of our charity beneficiaries have to say about us.</div>
+            </div>
+            <div class="row">
+                <div class="three-item-carousel owl-theme owl-carousel owl-nav-none owl-dot-style-one">
+                    <div class="testimonial-block-four">
+                        <div class="inner-box">
+                            <div class="image"><img src="{% static 'images/resource/logo-icon.png' %}" alt=""></div>
+                            <h4>It’s helped me so much.</h4>
+                            <div class="text">I find it quite fullfillling of be a part of this community. I wish I found this earlier during my undergraduate days.</div>
+                            <div class="author-title">Fortunate Alabi</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-four">
+                        <div class="inner-box">
+                            <div class="image"><img src="{% static 'images/resource/logo-icon.png' %}" alt=""></div>
+                            <h4>Thank you for this opportunity.</h4>
+                                <div class="text">Thank you TGNC for creating a community as such for young graduates and hoping to build our knowledge on nutrition and health.</div>
+                            <div class="author-title">Oyebanjo Damilola</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-four">
+                        <div class="inner-box">
+                            <div class="image"><img src="{% static 'images/resource/logo-icon.png' %}" alt=""></div>
+                            <h4>An Impactful Community</h4>
+                                <div class="text">Thank you for giving me the opportunity to be a part of this esteemed community!</div>
+                            <div class="author-title">Kenneth Emeka</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-four">
+                        <div class="inner-box">
+                            <div class="image"><img src="{% static 'images/resource/logo-icon.png' %}" alt=""></div>
+                            <h4>Positive experience.</h4>
+                            <div class="text">I am really happy to be a part of this community and I know it's going to be global. I love the little steps they take to encourage members.</div>
+                            <div class="author-title">Akinbode Kanyinsola</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-four">
+                        <div class="inner-box">
+                            <div class="image"><img src="{% static 'images/resource/logo-icon.png' %}" alt=""></div>
+                            <h4>TGNC has helped my career.</h4>
+                            <div class="text">I have been able to learn more regarding nutrition, and having a community like TGNC has been helpful to my career.</div>
+                            <div class="author-title">Oladele Anthonia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Volunteer -->
+    <section class="volunteer-section" id="conact-us-now">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <h1>Get In Touch With Us</h1>
+                <div class="text">Do you need to get in touch with us? We are one call away!</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 m-auto">
+                    <div class="default-form-area wow fadeInUp" data-wow-delay="200ms">
+                        <form id="contact-form" name="contact_form" class="contact-form" action="" method="post">
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 column">        
+                                    <div class="form-group">
+                                        <input type="text" name="form_name" class="form-control" value="" placeholder="Your Name*" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 column">
+                                    <div class="form-group">
+                                        <input type="email" name="form_email" class="form-control required email" value="" placeholder="Email*" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 column">
+                                    <div class="form-group">
+                                        <input type="text" name="form_subject" class="form-control required email" value="" placeholder="Subject*" required="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 column">
+                                    <div class="form-group text-center">
+                                        <textarea name="form_message" class="form-control textarea required" placeholder="What's on your mind..."></textarea>
+                                    </div>
+                                </div>                                            
+                            </div>
+                            <div class="contact-section-btn">
+                                <div class="row m-0 justify-content-md-between align-items-end">
+                                    <div class="form-group">
+                                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                        <button class="theme-btn btn-style-one" type="submit" data-loading-text="Please wait..."><span>Send Message</span></button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="auto-container">
+            <div class="widget-wrapper">
+                <div class="row">
+                    <!-- Contact Widget -->
+                    <div class="col-lg-3 col-md-6 contact-widget footer-widget">
+                        <h4 class="widget-title">Contact</h4>
+                        <ul>
+                            <li>Ibadan, <br> Oyo - Nigeria, <br>West Africa.</li>
+                            <li><a href="mailto:globalnutritioncommunity@gmail.com">globalnutritioncommunity@gmail.com</a></li>
+                        </ul>   
+                        <h3><a href="tel:+2349064420665">+(234)-906-442-0665</a></h3>
+                    </div>
+                    <!-- About Widget -->
+                    <div class="col-lg-3 col-md-6 about-widget footer-widget">
+                        <h4 class="widget-title">About</h4>
+                        <ul>
+                            <li><a href="/about">About-Us</a></li>
+                            <li><a href="/about#team">Our-Team</a></li>
+                            <li><a href="/events">Upcoming Events</a></li>
+                            <li><a href="/blog">Trending News</a></li>
+                        </ul>                
+                    </div>
+                    <!-- Link Widget -->
+                    <div class="col-lg-3 col-md-6 link-widget footer-widget">
+                        <h4 class="widget-title">Quick Link</h4>
+                        <ul>
+                            <li><a href="/community">Community</a></li>
+                            <li><a href="/donate">Donate Now</a></li>
+                            <li><a href="/sponsor">Become a Sponsor</a></li>
+                            <li><a href="/#conact-us-now">Contact Us</a></li>
+                        </ul>               
+                    </div>
+                    <!-- Newsletter Widget -->
+                    <div class="col-lg-3 col-md-6 newsletter-widget footer-widget">
+                        <h4 class="widget-title">Newsletter</h4>
+                        <div class="text">Subscribe us and get latest news & <br>upcoming events.</div>
+                        <form action="#">
+                            <input type="email" placeholder="Emial Address...">
+                            <button class="submin-btn"><span class="flaticon-next"></span>Subscribe Us</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="left-content">
+                    <h1 style="color: #04a128; font-weight: 800;">TGNC</h1>
+                </div>
+                <div class="right-content">
+                    <ul class="social-icon-three">
+                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-skype"></span></a></li>
+                        <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon flaticon-arrow"></span></div>
+
+</div>
+<!--End pagewrapper-->
+
+
+
+<!-- JS -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/TweenMax.min.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/swiper.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'js/menu-nav-btn.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<!-- Custom JS -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
